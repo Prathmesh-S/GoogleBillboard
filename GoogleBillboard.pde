@@ -1,14 +1,23 @@
-public final static String e = "2.7182818284590452353602874713526624977572470936999595749669676277240766303535475945713821785251664274274663919320030599218174135966290435";  
-public void setup()  
-{            
-    //your code here 
-}  
-public void draw()  
-{   
-	//not needed for this assignment
-}  
-public boolean isPrime(double dNum)  
-{   
-    //your code here   
-    return true;  
-} 
+public void setup(){
+ boolean  primeYet = false;
+ String natural = new String("2718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427427466391932003059");
+ double number = 0;
+  for (int i = 0; primeYet==false;i++) {
+  String Digits = natural.substring(i,i+10);
+  number = Double.parseDouble(Digits);
+  if (isPrime(number)==true) {
+   println(number);
+   primeYet=true;
+    }
+  }
+}
+
+public boolean isPrime(double x){
+for (int i = 2; i<=Math.sqrt(x);i++) {
+  if (x % i ==0) {
+    return(false);
+    }
+  }
+  
+  return(true);
+}
